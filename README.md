@@ -52,6 +52,21 @@ This repository provides the setup files and configuration required to deploy an
    docker-compose ps
    ```
 
+6. **Test and Send Logs**:
+   To send logs to Logstash, use this curl command:
+   ```bash
+   curl -X POST "http://localhost:5000" \
+-u "elastic:BYg2Fr71UKEDel9e" \
+-H "Content-Type: application/json" \
+-d '{
+      "timestamp": "2023-08-17T12:34:56Z",
+      "message": "hello world",
+      "level": "INFO",
+      "Service": "Service1",
+      "environment": "dev"
+    }'
+   ```
+
 ## 📘 Configuration Files Explained
 
 ### docker-compose.yml
