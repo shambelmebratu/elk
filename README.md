@@ -55,8 +55,8 @@ This repository provides the setup files and configuration required to deploy an
 6. **Test and Send Logs**:
    To send logs to Logstash, use this curl command:
    ```bash
-   curl -X POST "http://localhost:5000" \
--u "elastic:BYg2Fr71UKEDel9e" \
+   curl -X POST "http://localhost:${LOGSTASH_PORT}" \
+-u "${LOGSTASH_USER}:${LOGSTASH_PASSWORD}" \
 -H "Content-Type: application/json" \
 -d '{
       "timestamp": "2023-08-17T12:34:56Z",
